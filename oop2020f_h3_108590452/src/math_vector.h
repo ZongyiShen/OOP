@@ -6,6 +6,11 @@ private:
 	int _dim;
 
 public:
+	MathVector(){
+		_vec = 0;
+		_dim=0;
+	}
+
   MathVector(double a[], int dim){
     _dim = dim;
     _vec = new double[_dim];
