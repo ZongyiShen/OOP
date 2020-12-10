@@ -166,7 +166,7 @@ class angleComparator{
 
 
 
-Vector centroid(Vector vec[], int sides) 	//(25 points) 回傳多個 vector 所組成的重心
+Vector centroid(Vector vec[], int sides) 	// 回傳多個 vector 所組成的重心
 {
 	Vector center=Vector(vec[0]._dim);
 	for (int i = 0; i < sides; i++) {
@@ -178,7 +178,7 @@ Vector centroid(Vector vec[], int sides) 	//(25 points) 回傳多個 vector 所�
 	return center;
 }
 
-double distance(Vector u, Vector v)		//(25 points) 回傳兩個 vector 的距離
+double distance(Vector u, Vector v)		// 回傳兩個 vector 的距離
 {
 	if (v._dim != u._dim){
 		throw std::string("Length Error");
@@ -192,7 +192,7 @@ double distance(Vector u, Vector v)		//(25 points) 回傳兩個 vector 的距離
 
 }
 
-double Area(Vector u, Vector v, Vector w) //(25 points) 回傳三個 vector 所圍成的三角形面積
+double Area(Vector u, Vector v, Vector w) // 回傳三個 vector 所圍成的三角形面積
 {
 		double A = (u-v).length();
     double B = (v-w).length();
@@ -202,7 +202,7 @@ double Area(Vector u, Vector v, Vector w) //(25 points) 回傳三個 vector 所�
 
 }
 
-double area(Vector a[], int sides)		//(25 points) 回傳多個 vector 所圍成的多邊形面積
+double area(Vector a[], int sides)		// 回傳多個 vector 所圍成的多邊形面積
 {
 	Vector center = centroid(a,sides);
 	Vector b = a[0] - center;
@@ -222,7 +222,7 @@ double area(Vector a[], int sides)		//(25 points) 回傳多個 vector 所圍成�
 
 }
 
-double perimeter(Vector a[], int sides)	//(25 points) 回傳多個 vector 所圍成的多邊形周長
+double perimeter(Vector a[], int sides)	// 回傳多個 vector 所圍成的多邊形周長
 {
 		Vector center = centroid(a,sides);
 		Vector b = a[0] - center;
