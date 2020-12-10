@@ -192,7 +192,7 @@ double distance(Vector u, Vector v)		// 回傳兩個 vector 的距離
 
 }
 
-double Area(Vector u, Vector v, Vector w) // 回傳三個 vector 所圍成的三角形面積
+double area(Vector u, Vector v, Vector w) // 回傳三個 vector 所圍成的三角形面積
 {
 		double A = (u-v).length();
     double B = (v-w).length();
@@ -209,16 +209,16 @@ double area(Vector a[], int sides)		// 回傳多個 vector 所圍成的多邊形
   angleComparator comp = angleComparator(center, b);
   BubbleSort(a,a+sides,comp);
 
-	double area = 0;
+	double ans = 0;
     for (int i  = 0; i < (sides - 2); i+=2 ){
 
-				double temp = Area(a[i],a[i+1], a[i+2]);
-				area+=temp;
+				double temp = area(a[i],a[i+1], a[i+2]);
+				ans+=temp;
 
     }
-		double end = Area(a[sides-2],a[sides-1], a[0]);
-		area+=end;
-    return area;
+		double end = area(a[sides-2],a[sides-1], a[0]);
+		ans+=end;
+    return ans;
 
 }
 

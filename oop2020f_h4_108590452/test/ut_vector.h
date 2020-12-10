@@ -116,7 +116,7 @@ TEST_F(PolygonTest,distanceTEST){
 }
 
 TEST_F(PolygonTest,AreaTest){
-  ASSERT_NEAR( Area(u,v,w) ,6,0.001);
+  ASSERT_NEAR( area(u,v,w) ,6,0.001);
 }
 
 TEST(BubbleSort,case1){
