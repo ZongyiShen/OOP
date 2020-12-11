@@ -183,12 +183,13 @@ double distance(Vector u, Vector v)		// 回傳兩個 vector 的距離
 	if (v._dim != u._dim){
 		throw std::string("Length Error");
 	}
-	Vector temp=u-v;
-	double dis=0;
-	for (int i = 0; i < v._dim; i++) {
-		 dis +=temp._v[i]*temp._v[i];
-	}
-	return sqrt(dis);
+	// Vector temp=u-v;
+	// double dis=0;
+	// for (int i = 0; i < v._dim; i++) {
+	// 	 dis +=temp._v[i]*temp._v[i];
+	// }
+	// return sqrt(dis);
+	return (u-v).length();
 
 }
 
