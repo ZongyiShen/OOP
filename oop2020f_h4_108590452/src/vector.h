@@ -9,6 +9,7 @@ public:
 		_dim = 0;
     _v = new double[_dim];
 	}
+	
 	Vector(double v[], int dim) {
 		_v = new double[dim];
     for(int i=0;i<dim;i++){
