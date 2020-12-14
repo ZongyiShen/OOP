@@ -9,7 +9,7 @@ public:
 		_dim = 0;
     _v = new double[_dim];
 	}
-	
+
 	Vector(double v[], int dim) {
 		_v = new double[dim];
     for(int i=0;i<dim;i++){
@@ -212,14 +212,12 @@ double area(Vector a[], int sides)		// 回傳多個 vector 所圍成的多邊形
   BubbleSort(a,a+sides,comp);
 
 	double ans = 0;
-    for (int i  = 0; i < (sides - 2); i+=2 ){
+    for (int i  = 0; i < (sides - 2); i++ ){
 
-				double temp = area(a[i],a[i+1], a[i+2]);
+				double temp = area(a[0],a[i+1], a[i+2]);
 				ans+=temp;
 
     }
-		double end = area(a[sides-2],a[sides-1], a[0]);
-		ans+=end;
     return ans;
 
 }
