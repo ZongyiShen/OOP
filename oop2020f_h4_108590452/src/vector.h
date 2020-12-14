@@ -7,32 +7,32 @@ class Vector {
 public:
 	Vector(){
 		_dim = 0;
-    _v = new double[_dim];
+    		_v = new double[_dim];
 	}
 
 	Vector(double v[], int dim) {
 		_v = new double[dim];
-    for(int i=0;i<dim;i++){
-      _v[i] = v[i];
-    }
-    _dim = dim;
+		    for(int i=0;i<dim;i++){
+		      _v[i] = v[i];
+		    }
+		    _dim = dim;
 
 	}
 
 	Vector(int dim){
 		_v = new double[dim];
 		for(int i=0;i<dim;i++){
-      _v[i] = 0;
-    }
+      			_v[i] = 0;
+    		}
 		_dim = dim;
 	}
 
 	Vector(Vector const & v){
-		_v = new double[v._dim];
-    for(int i=0;i<v._dim;i++){
-      _v[i] = v._v[i];
-    }
-    _dim = v._dim;
+	 _v = new double[v._dim];
+	    for(int i=0;i<v._dim;i++){
+	      _v[i] = v._v[i];
+	    }
+	    _dim = v._dim;
 	}
 
 	// destructor
@@ -43,8 +43,8 @@ public:
 
 	// constant member function
 	int dim() {
-    return _dim;
-  }
+	    return _dim;
+	  }
 
 	double & at(int i) const{
 		return _v[i-1];
