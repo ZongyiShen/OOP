@@ -22,7 +22,7 @@ public:
     cout << "Shape deconstructor" << endl;
   }
   virtual double area() const = 0; // virtual == no definition
-  virtual double perimeter() const = 0;
+  virtual double primeter() const = 0;
   string getName() const;
   //virtual void changeNameTo(string input) = 0;
   // virtual string toString() const{

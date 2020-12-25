@@ -130,9 +130,9 @@ TEST(BubbleSort,case1){
   ASSERT_EQ(b[5], 100);
 }
 
-TEST_F(PolygonTest,perimeterTest){
+TEST_F(PolygonTest,primeterTest){
   Vector vectors[4] = {u, v, x, w};
-  ASSERT_NEAR( Perimeter(vectors,4) ,14,0.001);
+  ASSERT_NEAR( Primeter(vectors,4) ,14,0.001);
 }
 
 TEST_F(PolygonTest,areaTest){

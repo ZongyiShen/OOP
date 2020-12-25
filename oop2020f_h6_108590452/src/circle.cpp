@@ -1,5 +1,5 @@
 #include "circle.h"
-double Circle::perimeter() const {
+double Circle::primeter() const {
   double result = 2*_radius*M_PI;
   return result;
 }

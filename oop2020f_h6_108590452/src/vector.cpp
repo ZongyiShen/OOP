@@ -144,7 +144,7 @@ double Area(Vector a[], int sides)		// 回傳多個 vector 所圍成的多邊形
 
 }
 
-double Perimeter(Vector a[], int sides)	// 回傳多個 vector 所圍成的多邊形周長
+double Primeter(Vector a[], int sides)	// 回傳多個 vector 所圍成的多邊形周長
 {
 		Vector center = centroid(a,sides);
 		Vector b = a[0] - center;

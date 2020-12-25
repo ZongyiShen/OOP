@@ -23,6 +23,6 @@ TEST(POLYGONTEST,case1)
   Vector arr[] = {u, v, w, x, y, z};
   Polygon * poly = new Polygon(arr, 6);
   ASSERT_NEAR(6, poly->area(), epsilon);
-  ASSERT_NEAR(4 + 4 * sqrt(2), poly->perimeter(), epsilon);
+  ASSERT_NEAR(4 + 4 * sqrt(2), poly->primeter(), epsilon);
 
 }

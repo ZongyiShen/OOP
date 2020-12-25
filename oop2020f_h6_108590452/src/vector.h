@@ -77,7 +77,7 @@ public:
 	friend double Area(Vector a[], int sides)	;
 
 
-	friend double perimeter(Vector a[], int sides)	;
+	friend double Primeter(Vector a[], int sides)	;
 
 
 private:
@@ -112,7 +112,7 @@ double Area(Vector u, Vector v, Vector w);
 
 double Area(Vector a[], int sides);
 
-double Perimeter(Vector a[], int sides);
+double Primeter(Vector a[], int sides);
 
 
 #endif

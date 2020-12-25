@@ -26,7 +26,7 @@ Polygon( Vector * input ,int inputVerties){
     }
 }
 
-double perimeter() const override;
+double primeter() const override;
 
 
 double area() const override;

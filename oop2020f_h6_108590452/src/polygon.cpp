@@ -1,7 +1,7 @@
 #include "polygon.h"
 
-double Polygon::perimeter() const {
-  double result = Perimeter(_vertices,_numVertices);
+double Polygon::primeter() const {
+  double result = Primeter(_vertices,_numVertices);
   return result;
 }
 

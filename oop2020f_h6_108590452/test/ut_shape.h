@@ -23,14 +23,14 @@ TEST(ShapeTest, Polygon){
   Vector arr[] = {u, v, w, x, y, z};
   Polygon * poly = new Polygon(arr, 6);
   ASSERT_NEAR(6, poly->area(), epsilon);
-  ASSERT_NEAR(4 + 4 * sqrt(2), poly->perimeter(), epsilon);
+  ASSERT_NEAR(4 + 4 * sqrt(2), poly->primeter(), epsilon);
 
 }
 
 TEST(ShapeTest, Circle){
   Circle * c = new Circle(6);
   ASSERT_NEAR(6 * 6 * M_PI, c->area(), epsilon);
-  ASSERT_NEAR(12 * M_PI, c->perimeter(), epsilon);
+  ASSERT_NEAR(12 * M_PI, c->primeter(), epsilon);
 }
 
 TEST(ShapeTest, Shape){
