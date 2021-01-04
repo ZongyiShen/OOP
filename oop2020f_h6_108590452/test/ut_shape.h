@@ -84,10 +84,19 @@ TEST(FindTest, FindAll) {
   // for(int i=0; i<result.size();i++){
   //   cout<<result.at(i)->area()<<endl;
   // }
-      ASSERT_EQ(4, result.size());
+  ASSERT_EQ(4, result.size());
   ASSERT_NEAR(3, result[0]->area(), epsilon);
   ASSERT_NEAR(5, result[1]->area(), epsilon);
   ASSERT_NEAR(M_PI, result[3]->area(), epsilon);
 
- 
 }
+
+// [] : lambda-introducer, also known as capture clause.
+
+// [] -> no captured variables
+// [=] -> passed all captured variables by value
+// [&] -> passed all captured variables by reference
+
+
+// () : lambda declarator, also knows as paramater list.
+
