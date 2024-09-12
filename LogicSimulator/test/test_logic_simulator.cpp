@@ -48,6 +48,26 @@ TEST_F(LogicSimulatorTest, TruthTable) {
     std::string truthTable = simulator.getTruthTable();
 
     // 根据电路的预期真值表进行验证
-    std::string expectedTruthTable = "i 1 | o 1 \n0 | 0 \n1 | 1 \n";
+    std::string expectedTruthTable = 
+    string s = R"(i i i i | o o o
+        1 2 3 4 | 1 2 3 
+        --------+------
+        0 0 0 0 | 1 0 1 
+        0 0 0 1 | 1 0 0 
+        0 0 1 0 | 1 0 1 
+        0 0 1 1 | 1 0 0 
+        0 1 0 0 | 1 0 1 
+        0 1 0 1 | 1 0 0 
+        0 1 1 0 | 1 0 1 
+        0 1 1 1 | 1 0 0 
+        1 0 0 0 | 1 0 1 
+        1 0 0 1 | 1 0 0 
+        1 0 1 0 | 1 0 1 
+        1 0 1 1 | 1 0 0 
+        1 1 0 0 | 0 0 1 
+        1 1 0 1 | 0 0 0 
+        1 1 1 0 | 0 1 1 
+        1 1 1 1 | 0 1 0 
+    )";
     EXPECT_EQ(truthTable, expectedTruthTable);
 }
