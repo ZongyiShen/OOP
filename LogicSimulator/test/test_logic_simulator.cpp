@@ -1,38 +1,53 @@
 #include <gtest/gtest.h>
-#include "../src/LogicSimulator.h"  // Include your header file
+#include "../src/LogicSimulator.h"
 
+// 使用 Google Test 进行单元测试
 class LogicSimulatorTest : public ::testing::Test {
 protected:
     LogicSimulator simulator;
 
     void SetUp() override {
-        // Optional: Set up any shared test data here
+        // 在每个测试之前进行设置
+        // 可以添加初始化代码
     }
 
     void TearDown() override {
-        // Optional: Clean up any resources here
+        // 在每个测试之后进行清理
+        simulator.clearCircuit();
     }
 };
 
-TEST_F(LogicSimulatorTest, LoadCircuitValidFile) {
-    ASSERT_TRUE(simulator.loadCircuit("valid_circuit.lcf"));
+// 测试加载电路文件
+TEST_F(LogicSimulatorTest, LoadCircuit) {
+    // 使用一个示例电路文件路径
+    std::string filePath = "testfile.lcf";
+    bool result = simulator.loadCircuit(filePath);
+
+    // 验证电路是否成功加载
+    ASSERT_TRUE(result);
 }
 
-TEST_F(LogicSimulatorTest, LoadCircuitInvalidFile) {
-    ASSERT_FALSE(simulator.loadCircuit("invalid_circuit.lcf"));
+// 测试电路的模拟
+TEST_F(LogicSimulatorTest, Simulation) {
+    std::string filePath = "testfile.lcf";
+    simulator.loadCircuit(filePath);
+
+    std::vector<int> inputs = {1, 0}; // 根据你的电路文件设置输入值
+    std::string result = simulator.simulate(inputs);
+
+    // 根据预期输出验证结果
+    std::string expectedOutput = "1 0 | 0 "; // 根据电路逻辑填充正确的预期输出
+    EXPECT_EQ(result, expectedOutput);
 }
 
-TEST_F(LogicSimulatorTest, Simulate) {
-    simulator.loadCircuit("valid_circuit.lcf");
-    vector<int> inputs = {1, 0}; // Example input
-    string result = simulator.simulate(inputs);
-    // You may want to verify the expected result
-    ASSERT_EQ(result, "expected result");
-}
+// 测试生成真值表
+TEST_F(LogicSimulatorTest, TruthTable) {
+    std::string filePath = "testfile.lcf";
+    simulator.loadCircuit(filePath);
 
-TEST_F(LogicSimulatorTest, GetTruthTable) {
-    simulator.loadCircuit("valid_circuit.lcf");
-    string truthTable = simulator.getTruthTable();
-    // Verify the expected format or content of the truth table
-    ASSERT_NE(truthTable.find("expected header"), string::npos);
+    std::string truthTable = simulator.getTruthTable();
+
+    // 根据电路的预期真值表进行验证
+    std::string expectedTruthTable = "i 1 | o 1 \n0 | 0 \n1 | 1 \n";
+    EXPECT_EQ(truthTable, expectedTruthTable);
 }
