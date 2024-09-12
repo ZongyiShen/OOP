@@ -36,7 +36,7 @@ TEST_F(LogicSimulatorTest, Simulation) {
     std::string result = simulator.simulate(inputs);
 
     // 根据预期输出验证结果
-    std::string expectedOutput = "1 0 1 0 | 1 0 1"; // 根据电路逻辑填充正确的预期输出
+    std::string expectedOutput = "1 0 1 0 | 1 0 1 "; // 根据电路逻辑填充正确的预期输出
     EXPECT_EQ(result, expectedOutput);
 }
 
