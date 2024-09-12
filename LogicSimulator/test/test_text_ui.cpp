@@ -28,7 +28,7 @@ protected:
 };
 
 TEST_F(TextUITest, ProcessCommandLoadFile) {
-    EXPECT_CALL(mockSimulator, loadCircuit("valid_file.lcf"))
+    EXPECT_CALL(mockSimulator, loadCircuit("testfile.lcf"))
         .WillOnce(Return(true));
 
     // Capture the output and call the method
@@ -41,7 +41,7 @@ TEST_F(TextUITest, ProcessCommandLoadFile) {
 
 TEST_F(TextUITest, ProcessCommandSimulation) {
     EXPECT_CALL(mockSimulator, getNumInputs())
-        .WillOnce(Return(2));
+        .WillOnce(Return(4));
     EXPECT_CALL(mockSimulator, simulate(testing::_))
         .WillOnce(Return("1 0"));
 
