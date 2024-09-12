@@ -1,73 +1,74 @@
 #include <gtest/gtest.h>
 #include "../src/LogicSimulator.h"
 
-// 使用 Google Test 进行单元测试
+// Unit tests using Google Test
 class LogicSimulatorTest : public ::testing::Test {
 protected:
     LogicSimulator simulator;
 
     void SetUp() override {
-        // 在每个测试之前进行设置
-        // 可以添加初始化代码
+        // Setup before each test
+        // Initialization code can be added here
     }
 
     void TearDown() override {
-        // 在每个测试之后进行清理
+        // Cleanup after each test
         simulator.clearCircuit();
     }
 };
 
-// 测试加载电路文件
+// Test loading the circuit file
 TEST_F(LogicSimulatorTest, LoadCircuit) {
-    // 使用一个示例电路文件路径
+    // Use a sample circuit file path
     std::string filePath = "testfile.lcf";
     bool result = simulator.loadCircuit(filePath);
 
-    // 验证电路是否成功加载
+    // Verify that the circuit was loaded successfully
     ASSERT_TRUE(result);
 }
 
-// 测试电路的模拟
+// Test the circuit simulation
 TEST_F(LogicSimulatorTest, Simulation) {
     std::string filePath = "testfile.lcf";
     simulator.loadCircuit(filePath);
 
-    std::vector<int> inputs = {1, 0, 1, 0}; // 根据你的电路文件设置输入值
+    std::vector<int> inputs = {1, 0, 1, 0}; // Set input values based on your circuit file
     std::string result = simulator.simulate(inputs);
 
-    // 根据预期输出验证结果
-    std::string expectedOutput = "1 0 1 0 | 1 0 1 "; // 根据电路逻辑填充正确的预期输出
+    // Verify the result based on the expected output
+    std::string expectedOutput = "1 0 1 0 | 1 0 1 "; // Fill with the correct expected output based on the circuit logic
     EXPECT_EQ(result, expectedOutput);
 }
 
-// 测试生成真值表
+// Test generating the truth table
 TEST_F(LogicSimulatorTest, TruthTable) {
     std::string filePath = "testfile.lcf";
     simulator.loadCircuit(filePath);
 
     std::string truthTable = simulator.getTruthTable();
 
-    // 根据电路的预期真值表进行验证
+    // Verify the truth table based on the expected table
     std::string expectedTruthTable = 
     string s = R"(i i i i | o o o
-        1 2 3 4 | 1 2 3 
-        --------+------
-        0 0 0 0 | 1 0 1 
-        0 0 0 1 | 1 0 0 
-        0 0 1 0 | 1 0 1 
-        0 0 1 1 | 1 0 0 
-        0 1 0 0 | 1 0 1 
-        0 1 0 1 | 1 0 0 
-        0 1 1 0 | 1 0 1 
-        0 1 1 1 | 1 0 0 
-        1 0 0 0 | 1 0 1 
-        1 0 0 1 | 1 0 0 
-        1 0 1 0 | 1 0 1 
-        1 0 1 1 | 1 0 0 
-        1 1 0 0 | 0 0 1 
-        1 1 0 1 | 0 0 0 
-        1 1 1 0 | 0 1 1 
-        1 1 1 1 | 0 1 0 
-    )";
+1 2 3 4 | 1 2 3 
+--------+------
+0 0 0 0 | 1 0 1 
+0 0 0 1 | 1 0 0 
+0 0 1 0 | 1 0 1 
+0 0 1 1 | 1 0 0 
+0 1 0 0 | 1 0 1 
+0 1 0 1 | 1 0 0 
+0 1 1 0 | 1 0 1 
+0 1 1 1 | 1 0 0 
+1 0 0 0 | 1 0 1 
+1 0 0 1 | 1 0 0 
+1 0 1 0 | 1 0 1 
+1 0 1 1 | 1 0 0 
+1 1 0 0 | 0 0 1 
+1 1 0 1 | 0 0 0 
+1 1 1 0 | 0 1 1 
+1 1 1 1 | 0 1 0 
+)";
     EXPECT_EQ(truthTable, expectedTruthTable);
 }
+
