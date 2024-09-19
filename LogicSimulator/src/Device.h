@@ -12,6 +12,7 @@ protected:
 public:
     virtual int getOutput() = 0;  // Calculate output
     void addInput(Device* input);
+<<<<<<< HEAD
     GateType getType() const;
     virtual ~Device() = default;
 };
@@ -41,5 +42,10 @@ public:
     void setValue(int v);
     int getOutput() override;
 };
+=======
+    virtual ~Device() = default;
+};
+
+>>>>>>> master
 
 #endif // DEVICE_H

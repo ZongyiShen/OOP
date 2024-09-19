@@ -3,6 +3,7 @@
 #include <sstream>
 #include <iostream>
 
+<<<<<<< HEAD
 std::string LogicSimulator::formatHeader() {
     std::stringstream s1, s2, s3;
     for (int i = 1; i <= inputPins.size(); i++) {
@@ -19,6 +20,8 @@ std::string LogicSimulator::formatHeader() {
     return s1.str() + "\n" + s2.str() + "\n" + s3.str() + "\n";
 }
 
+=======
+>>>>>>> master
 void LogicSimulator::clearCircuit() {
     for (Device* device : devices) {
         delete device;
@@ -59,6 +62,7 @@ bool LogicSimulator::loadCircuit(const std::string& filePath) {
         Device* gate = nullptr;
         switch (gateType) {
             case GateType::AND_GATE:
+<<<<<<< HEAD
                 gate = new ANDGate();
                 break;
             case GateType::OR_GATE:
@@ -69,6 +73,17 @@ bool LogicSimulator::loadCircuit(const std::string& filePath) {
                 break;
             default:
                 std::cout << "Unknown gate type: " << gateType << std::endl;
+=======
+                gate = new AndGate();
+                break;
+            case GateType::OR_GATE:
+                gate = new OrGate();
+                break;
+            case GateType::NOT_GATE:
+                gate = new NotGate();
+                break;
+            default:
+>>>>>>> master
                 return false;
         }
         devices.push_back(gate);
@@ -90,14 +105,20 @@ bool LogicSimulator::loadCircuit(const std::string& filePath) {
             if (conn < 0) {
                 int inputIndex = -conn - 1;
                 if (inputIndex < 0 || inputIndex >= numInputs) {
+<<<<<<< HEAD
                     std::cout << "Input pin error!" << std::endl;
+=======
+>>>>>>> master
                     return false;
                 }
                 gate->addInput(inputPins[inputIndex]);
             } else {
                 int gateIndex = conn - 1;
                 if (gateIndex < 0 || gateIndex >= devices.size()) {
+<<<<<<< HEAD
                     std::cout << "Gate index error!" << std::endl;
+=======
+>>>>>>> master
                     return false;
                 }
                 gate->addInput(devices[gateIndex]);
@@ -133,7 +154,10 @@ std::string LogicSimulator::getTruthTable() {
     std::stringstream table;
     int numInputs = inputPins.size();
     int totalCombinations = 1 << numInputs;
+<<<<<<< HEAD
     table << formatHeader();  // Use the helper function to generate the header
+=======
+>>>>>>> master
 
     for (int i = 0; i < totalCombinations; ++i) {
         std::vector<int> inputs(numInputs);

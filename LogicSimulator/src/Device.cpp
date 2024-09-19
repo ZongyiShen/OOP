@@ -4,6 +4,7 @@
 void Device::addInput(Device* input) {
     inputPins.push_back(input);
 }
+<<<<<<< HEAD
 
 GateType Device::getType() const {
     return type;
@@ -48,3 +49,5 @@ void InputPin::setValue(int v) {
 int InputPin::getOutput() {
     return value;  // The output of the input pin is its value
 }
+=======
+>>>>>>> master
