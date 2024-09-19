@@ -3,8 +3,6 @@
 
 TextUI::TextUI(LogicSimulator* sim) : simulator(sim) {}
 
-<<<<<<< HEAD
-=======
 void TextUI::formatHeader(int inputSize,int outputSize) const{
     std::stringstream s1, s2, s3;
     for (int i = 1; i <= inputSize; i++) {
@@ -21,7 +19,6 @@ void TextUI::formatHeader(int inputSize,int outputSize) const{
     std::cout << s1.str() + "\n" + s2.str() + "\n" + s3.str() + "\n";
 }
 
->>>>>>> master
 void TextUI::loadingFile() {
     std::string filePath;
     std::cout << "Please key in a file path: ";
@@ -46,18 +43,10 @@ void TextUI::Simulation() {
         }
     }
     std::string result = simulator->simulate(inputs);
-<<<<<<< HEAD
-    result = simulator->formatHeader() + result;
-    displaySimulationResult(result);
-}
-
-void TextUI::truthTable() {
-=======
     displaySimulationResult(result);
 }
 
 void TextUI::TruthTable() {
->>>>>>> master
     displayTruthTable(simulator->getTruthTable());
 }
 
@@ -70,13 +59,6 @@ void TextUI::displayError(const std::string& errorMsg) const {
 }
 
 void TextUI::displaySimulationResult(const std::string& result) const {
-<<<<<<< HEAD
-    std::cout << "Simulation Result: " << std::endl << result << std::endl << std::endl;
-}
-
-void TextUI::displayTruthTable(const std::string& truthTable) const {
-    std::cout << "Truth table: " << std::endl << truthTable << std::endl;
-=======
     std::cout << "Simulation Result: " << std::endl;
     formatHeader(simulator->getNumInputs(),simulator->getNumOutputs());
     std::cout << result << std::endl << std::endl;
@@ -86,7 +68,6 @@ void TextUI::displayTruthTable(const std::string& truthTable) const {
     std::cout << "Truth table: " << std::endl;
     formatHeader(simulator->getNumInputs(),simulator->getNumOutputs());
     std::cout << truthTable << std::endl;
->>>>>>> master
 }
 
 void TextUI::displayMenu() const {
@@ -106,11 +87,7 @@ void TextUI::processCommand(int command) {
             Simulation();
             break;
         case 3:
-<<<<<<< HEAD
-            truthTable();
-=======
             TruthTable();
->>>>>>> master
             break;
         case 4:
             Exit();

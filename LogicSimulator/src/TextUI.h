@@ -2,10 +2,7 @@
 #define TEXT_UI_H
 
 #include "LogicSimulator.h"
-<<<<<<< HEAD
-=======
 #include <sstream>
->>>>>>> master
 #include <string>
 
 class TextUI {
@@ -14,14 +11,6 @@ private:
 
     void loadingFile();
     void Simulation();
-<<<<<<< HEAD
-    void truthTable();
-    void Exit();
-
-    void displayError(const std::string& errorMsg) const;
-    void displaySimulationResult(const std::string& result) const;
-    void displayTruthTable(const std::string& truthTable) const;
-=======
     void TruthTable();
     void Exit();
     
@@ -29,7 +18,6 @@ private:
     void displaySimulationResult(const std::string& result) const;
     void displayTruthTable(const std::string& truthTable) const;
     void formatHeader(int inputSize,int outputSize) const;
->>>>>>> master
 
 public:
     TextUI(LogicSimulator* sim);
